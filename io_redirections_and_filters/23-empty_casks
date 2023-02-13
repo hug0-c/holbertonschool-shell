@@ -1,2 +1,2 @@
 #!/bin/bash
-find . \( -type f -empty -o -type d -empty \) -printf "%f\n" | sed -e '$a\'
+find . \( -type f -size 0 -o -type d \) -printf "%f\n" | while read file; do echo "$file"; done
